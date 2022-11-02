@@ -1,0 +1,38 @@
+---
+title: "My basic website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+
+## This is Hengxuan's basic website
+
+This is the home page of Hengxuan's website. You can find some information about me here. 
+
+
+## My favourite image
+
+Here is my favorite background picture (guess which game?):
+
+<img src="images/bkgd.jpg" style="width:75%">
+
+
+## Link to my favourite course
+
+This is a link to the most useful course I am taking:
+
+* [P8105](https://p8105.com)
+
+
+## Link to page within the site
+
+[My resume](about.html)
+
+
+
+
+
+
+

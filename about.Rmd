@@ -1,0 +1,77 @@
+---
+title: "My resume"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+## About me and my experience
+
+My name is Hengxuan Ma. I'm currently a graduate student at Columbia University.
+
+
+### My academic experience {.tabset}
+
+#### Expected May 2023
+
+School name: Columbia University
+
+Location: New York, NY
+
+Degree & major: M.S. in Biostatistics
+
+Relevant Coursework: Biostatistical Methods, Probability, Statistical Inference, Statistical Computing with R, SQL, SAS
+
+#### Sep 2016 – May 2020
+
+School name: University of Wisconsin - Madison 
+
+Location: Madison, WI
+
+Degree & major: B.S. in Environmental Sciences & Computer Science
+
+Relevant Coursework: Programming, Regression Model and Analysis, Neural Networks, Machine Learning		
+
+
+### My professional experience {.tabset}
+
+#### Year 2022
+
+Company name: HireBeat
+
+Location: New York, NY
+
+Position: Data Analyst Intern
+
+##### Responsibility: 
+
+Conducted an analysis about job-openings-level-by-industry using data reported at 6 time points through 2021-2022 from the website of the U.S. BUREAU OF LABOR STATISTICS through tableau, discovered 5 industries as the final potential target industries which may provide the largest number of job openings for company’s customers.
+
+#### Year 2021
+
+Company name: Jiangsu Recbio Technology Co. Ltd.
+
+Location: Jiangsu, China
+
+Position: Financial Assistant Intern
+
+##### Responsibility: 
+
+Engaged and Assisted in the completion of IPO project, spot checking vouchers and proofreading over 48 contracts establishing and maintaining relationships with a broad base of key stakeholders.
+
+#### Year 2019 - 2020
+
+Company name: Lee Lab
+
+Location: Madison, WI
+
+Position: Undergraduate Research Assistant
+
+##### Responsibility: 
+
+Assisted in periodic genetic analysis of experiments in evolutionary dynamics, implementing parametric and non-parametric hypothesis testing to investigate biomechanics related factors in SAS.
+
+
+
+
