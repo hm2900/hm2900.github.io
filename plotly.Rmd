@@ -1,0 +1,81 @@
+---
+title: "Plotly"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+# Loading data
+
+We're gonna look at the DOHMH New York City Restaurant Inspection Results data.
+
+```{r}
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+```
+
+```{r}
+data("rest_inspec")
+
+cuisine_type = 
+  rest_inspec %>%
+  count(cuisine_description) %>% 
+  arrange(desc(n)) %>%
+  filter(n > 10000)
+
+rest_inspec = 
+  rest_inspec %>%
+  select(
+    boro, critical_flag, building, cuisine_description, 
+    inspection_date,score, zipcode, grade) %>%
+  filter(
+    boro == "MANHATTAN",
+    critical_flag == "Not Critical",
+    cuisine_description %in% c("American", "Chinese", "Italian",	
+"Mexican", "Japanese", "Spanish", "Caribbean"),
+    inspection_date < '2015-01-01',
+    score < 28,
+  ) %>%
+  drop_na(grade)
+```
+
+
+# Plotly plots
+
+## scatterplot
+
+```{r}
+rest_inspec %>%
+  mutate(text_label = str_c("score: ", score, "\ngrade: ", grade)) %>%
+  plot_ly(
+    x = ~building, y = ~zipcode, color = ~score, 
+    text = ~text_label, alpha = 0.5, 
+    type = "scatter", mode = "markers")
+```
+
+## boxplot
+
+```{r}
+rest_inspec %>%
+  mutate(cuisine_description = fct_reorder(cuisine_description, score)) %>%
+  plot_ly(
+    y = ~score, x = ~cuisine_description, 
+    color = ~cuisine_description,
+    type = "box", colors = "viridis")
+```
+
+## bar plot
+
+```{r}
+rest_inspec %>%
+  count(cuisine_description) %>%
+  mutate(cuisine_description = fct_reorder(cuisine_description, n)) %>%
+  plot_ly(
+    x = ~cuisine_description, y = ~n, color = ~cuisine_description, 
+    type = "bar", colors = "viridis")
+```
+
+
+
