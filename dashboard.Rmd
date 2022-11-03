@@ -1,19 +1,18 @@
 ---
-title: "Plotly"
+title: "Dashboard"
 output: 
-  html_document:
-    toc: true
-    toc_float: true
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    source: embed
 ---
 
-# Loading data
-
-We're gonna look at the DOHMH New York City Restaurant Inspection Results data.
-
-```{r}
+```{r setup, include=FALSE}
 library(tidyverse)
 library(p8105.datasets)
 library(plotly)
+
+library(flexdashboard)
 ```
 
 ```{r}
@@ -36,9 +35,10 @@ rest_inspec =
 ```
 
 
-# Plotly plots
+Column {data-width=650}
+-----------------------------------------------------------------------
 
-## scatterplot
+### Relationship between Cuisine Type, Inspection Score (<28). and Grade (A, B, C, P) of the Non-Critical Restaurants in Manhattan
 
 ```{r}
 rest_inspec %>%
@@ -49,7 +49,10 @@ rest_inspec %>%
     type = "scatter", mode = "markers")
 ```
 
-## boxplot
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### The Distribution of Inspection Score in Each Cuisine Type in Manhattan
 
 ```{r}
 rest_inspec %>%
@@ -60,7 +63,7 @@ rest_inspec %>%
     type = "box", colors = "viridis")
 ```
 
-## bar plot
+### The Number of Non-Critical Restaurants in Each Cuisine Type in Manhattan
 
 ```{r}
 rest_inspec %>%
@@ -70,6 +73,4 @@ rest_inspec %>%
     x = ~cuisine_description, y = ~n, color = ~cuisine_description, 
     type = "bar", colors = "viridis")
 ```
-
-
 

@@ -8,7 +8,7 @@ output:
 
 ## About me and my experience
 
-My name is Hengxuan Ma. I'm currently a graduate student at Columbia University.
+My name is Hengxuan Ma. You can find more information about me and my academic or professional experience here. 
 
 
 ### My academic experience {.tabset}
